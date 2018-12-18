@@ -2,7 +2,7 @@ let leftScore = 0;
 let rightScore = 0;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth-15, windowHeight/1.5);
   frameRate(120);
   ball = new Ball();
   left = new PlayerPaddle();
