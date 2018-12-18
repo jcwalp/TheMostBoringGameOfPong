@@ -2,7 +2,7 @@ class AIPaddle {
   constructor(){
     this.y = height/2;
     this.w = 20;
-    this.x = width - 80;
+    this.x = width - 40;
     this.h = 100;
     this.yChange = 0;
   }
