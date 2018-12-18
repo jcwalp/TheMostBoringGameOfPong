@@ -29,7 +29,7 @@ function draw() {
 
 
 function dispScore() {
-  fill(0);
+  fill(255);
   textSize(32);
   text(leftScore, 32, 40);
   text(rightScore, width - 64, 40);
