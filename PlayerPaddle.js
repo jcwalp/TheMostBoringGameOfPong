@@ -13,12 +13,15 @@ class PlayerPaddle {
   }
 
   move(){
-    this.y = ball.y + 10;
+    this.y = ball.y - 2;
   }
 
   show(){
-    fill(255);
+    var clr = color(255);
+    fill(clr);
     rectMode(CENTER);
     rect(this.x, this.y, this.w, this.h);
   }
+
+
 }

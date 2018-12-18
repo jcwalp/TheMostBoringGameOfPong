@@ -5,6 +5,7 @@ class Ball {
     this.xspeed = 0;
     this.yspeed = 0;
     this.r = 20;
+    this.velocity = document.getElementById("Velocity").value;
 
     this.reset();
   }
@@ -15,10 +16,10 @@ class Ball {
       this.x - this.r < p.x + p.w / 2) {
       if (this.x > p.x) {
         let diff = this.y - (p.y - p.h / 2);
-        let rad = radians(45);
+        let rad = radians(60);
         let angle = map(diff, 0, p.h, -rad, rad);
-        this.xspeed = 15 * cos(angle);
-        this.yspeed = 15 * sin(angle);
+        this.xspeed = this.velocity * cos(angle);
+        this.yspeed = this.velocity * sin(angle);
         this.x = p.x + p.w / 2 + this.r;
       }
     }
@@ -32,8 +33,8 @@ class Ball {
       if (this.x < p.x) {
         let diff = this.y - (p.y - p.h / 2);
         let angle = map(diff, 0, p.h, radians(225), radians(135));
-        this.xspeed = 15 * cos(angle);
-        this.yspeed = 15 * sin(angle);
+        this.xspeed = this.velocity * cos(angle);
+        this.yspeed = this.velocity * sin(angle);
         this.x = p.x - p.w / 2 - this.r;
       }
     }
@@ -56,14 +57,15 @@ class Ball {
   update() {
     this.x += this.xspeed;
     this.y += this.yspeed;
+    this.velocity = document.getElementById("Velocity").value;
   }
 
   reset() {
     this.x = width / 2;
     this.y = height / 2;
     let angle = random(-PI / 4, PI / 4);
-    this.xspeed = 15 * Math.cos(angle);
-    this.yspeed = 15 * Math.sin(angle);
+    this.xspeed = this.velocity * Math.cos(angle);
+    this.yspeed = this.velocity * Math.sin(angle);
 
     if (random(1) < 0.5) {
       this.xspeed *= -1;
